@@ -1,0 +1,17 @@
+{
+    "name": "franck/php-trace",
+    "description": "Trace",
+    "authors": [
+        {
+            "name": "Franck Blanchard",
+            "email": "info@aztequemedia.com"
+        }
+    ],
+    "require": {
+        "pimple/pimple": "~3.0"
+    },
+    "autoload": {
+        "psr-4": {"Trace\\": "src/Trace"}
+    }
+
+}
