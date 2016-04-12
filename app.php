@@ -9,7 +9,6 @@ require __DIR__ . '/app/services.php';
 /** end container building * */
 /** cretion de l'instance Trace * */
 $trace = $container['trace'];
-/** On affiche la version de la classe pour vérifier que tout fonctionne * */
-echo "\n" . $trace->getVersion() . "\n\n";
-
-
+/** On affiche la version de la classe pour vérifier que tout fonctionne **/
+echo "\n" . $trace->getVersion() . "\n";
+echo "\n" . $trace->getDateTime(). "\n";

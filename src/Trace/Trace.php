@@ -5,7 +5,7 @@ namespace Trace;
 /**
  * Trace est uns classe PHP qui permet d'enregistrer des informations, dans une base de données.
  * @author franck blanchard <info@aztequemedia.com>
- * 
+ *
  */
 class Trace {
 
@@ -27,11 +27,20 @@ class Trace {
 
     /**
      * Fonction qui retourne la version
-     * 
+     *
      * @return string
      */
-    function getVersion() {
+    public function getVersion() {
         return 'Trace Version :' . $this->version;
     }
 
+    /**
+     * Fonction qui retourne la date et l'heure courante.
+     *
+     * @return datetime
+     */
+    public function getDateTime() {
+        $date = new \DateTime();
+        return $date->format('Y-m-d H:i:s');
+    }
 }
