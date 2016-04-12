@@ -21,8 +21,16 @@ class Trace {
      */
     protected $pdo;
 
-    function __construct(\PDO $pdo) {
+    /**
+     * Paramètres optionnel de configuration
+     *
+     * @var array 
+     */
+    protected $parameters;
+
+    function __construct(\PDO $pdo, array $parameters = null) {
         $this->pdo = $pdo;
+        $this->parameters = $parameters;
     }
 
     /**
@@ -43,4 +51,30 @@ class Trace {
         $date = new \DateTime();
         return $date->format('Y-m-d H:i:s');
     }
+
+    /**
+     * Enregistre un paramètre.
+     * 
+     * @param string|int $key
+     * @param mixed $value
+     */
+    public function setParameter($key, $value) {
+        $this->parameters[$key] = $value;
+    }
+
+    /**
+     * Retourne un paramètre
+     * 
+     * @param string|int $key
+     * 
+     * @return mixed
+     */
+    public function getParameter($key) {
+        $default = null;
+        if (isset($this->parameters[$key])) {
+            return $this->parameters[$key];
+        }
+        return $default;
+    }
+
 }

@@ -1,6 +1,6 @@
 # PHP-trace
 
-PHP-trace est une classe **PHP**, qui permet d'enregistrer différentes informations dans une base de données. Cette classe n'a pas pour but de faire concurrence à une classe de logging comme klogger. Il n'y a pas de priorité de niveau pour l'enregistrement de message.
+PHP-trace est une classe **PHP**, qui permet d'enregistrer différentes informations dans une base de données. Cette classe n'a pas pour but de faire concurrence à une classe de type logging comme klogger. Il n'y a pas de priorité de niveau pour l'enregistrement de message.
 Un message est composé d'un champ *date*, un champ *type*, et un champ *message*.
 Le champ *date* est automatique. Les autres champs sont renseignés à l'exécution.
 
@@ -24,4 +24,4 @@ Nous utilisons l'autoloading de *Composer* pour charger les différentes classes
   
 # Avertissement
 
-Pour l'instant rien n'est figé.
+Pour l'instant rien n'est figé, et la classe n'est pas encore fonctionnelle. 
