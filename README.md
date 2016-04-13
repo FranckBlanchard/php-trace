@@ -14,14 +14,20 @@ Le fichier *app.php* est le fichier a exécuter pour tester la classe.
 
 # Utiliser la classe **Trace**
 
-Pour tester la classe, en ligne de commande faire:
+Le fichier *app.php* est un exemple d'utilisation. Il s'utilise en ligne de commande, et tout le code est commenté.
 
-    php app.php  
+## Les paramètres optionnels
 
-Tous les fichiers sont commentés pour fournir les explications.
+Les paramètres optionnels, peuvent être fournis au constructeur (2ème argument) via un tableau, ou à l'aide de la fonction setParameter();
+
+**dtz**:définit le fuseau horaire. La liste compatible des fuseaux se trouve a l'adresse suivante :  [http://php.net/manual/fr/timezones.php](http://php.net/manual/fr/timezones.php). Par défaut la classe utilise le fuseau horaire de la machine sur laquelle elle est utilisée.
+
+# Remarques
+
+Tous les fichiers sont commentés pour les explications.
 Nous utilisons, le *DIC Pimple* pour se simplifier la vie.
 Nous utilisons l'autoloading de *Composer* pour charger les différentes classes.
-  
+
 # Avertissement
 
-Pour l'instant rien n'est figé, et la classe n'est pas encore fonctionnelle. 
+Pour l'instant rien n'est figé, et la classe n'est pas encore fonctionnelle.

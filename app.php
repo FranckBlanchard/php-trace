@@ -13,8 +13,10 @@ $trace = $container['trace'];
 echo "\n" . $trace->getVersion() . "\n";
 echo "\n" . $trace->getDateTime(). "\n";
 /* on enregistre un paramètre */
-$trace->setParameter('dtz','America/Montreal');
+$trace->setParameter('dtz','Europe/Paris');
 /* on affiche le paramètre */
 echo $trace->getParameter('dtz')."\n";
+/* on affiche la date avec le nouveau fuseau horaire */
+echo "\n" . $trace->getDateTime(). "\n";
 /* on affiche un paramètre null */
 echo $trace->getParameter('erreur')."\n";

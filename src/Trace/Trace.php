@@ -48,7 +48,12 @@ class Trace {
      * @return datetime
      */
     public function getDateTime() {
-        $date = new \DateTime();
+        if (isset($this->parameters['dtz'])) {
+            $date = new \DateTime(null,new \DateTimeZone($this->getParameter('dtz')));
+        } else {
+            $date = new \DateTime();
+        }
+
         return $date->format('Y-m-d H:i:s');
     }
 
