@@ -28,7 +28,7 @@ class Trace {
      */
     protected $parameters;
 
-    function __construct(\PDO $pdo, array $parameters = null) {
+    function __construct(\PDO $pdo, array $parameters = array('tbl'=>'trace')) {
         $this->pdo = $pdo;
         $this->parameters = $parameters;
     }

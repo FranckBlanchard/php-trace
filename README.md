@@ -21,6 +21,7 @@ Le fichier *app.php* est un exemple d'utilisation. Il s'utilise en ligne de comm
 Les paramètres optionnels, peuvent être fournis au constructeur (2ème argument) via un tableau, ou à l'aide de la fonction setParameter();
 
 **dtz**:définit le fuseau horaire. La liste compatible des fuseaux se trouve a l'adresse suivante :  [http://php.net/manual/fr/timezones.php](http://php.net/manual/fr/timezones.php). Par défaut la classe utilise le fuseau horaire de la machine sur laquelle elle est utilisée.
+**tbl**:définit le nom de la table de la base de données. Par défaut la valeur est trace.
 
 # Remarques
 

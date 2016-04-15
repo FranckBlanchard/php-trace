@@ -17,6 +17,8 @@ $trace->setParameter('dtz','Europe/Paris');
 /* on affiche le paramètre */
 echo $trace->getParameter('dtz')."\n";
 /* on affiche la date avec le nouveau fuseau horaire */
-echo "\n" . $trace->getDateTime(). "\n";
+echo "\n" . $trace->getDateTime(). "\n"; 
+/* affichage du nom de la table*/
+echo $trace->getParameter('tbl')."\n";
 /* on affiche un paramètre null */
 echo $trace->getParameter('erreur')."\n";
