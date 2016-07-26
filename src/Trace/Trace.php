@@ -13,7 +13,7 @@ class Trace {
      * Numéro de version
      * @var string
      */
-    protected $version = 'V0.1.0';
+    protected $version = '0.1.0';
 
     /**
      * Objet PDO pour accéder a la base de données.
@@ -28,7 +28,7 @@ class Trace {
      */
     protected $parameters;
 
-    function __construct(\PDO $pdo, array $parameters = array('tbl'=>'trace')) {
+    function __construct(\PDO $pdo, array $parameters = array('tbl' => 'trace')) {
         $this->pdo = $pdo;
         $this->parameters = $parameters;
     }
@@ -49,7 +49,7 @@ class Trace {
      */
     public function getDateTime() {
         if (isset($this->parameters['dtz'])) {
-            $date = new \DateTime(null,new \DateTimeZone($this->getParameter('dtz')));
+            $date = new \DateTime(null, new \DateTimeZone($this->getParameter('dtz')));
         } else {
             $date = new \DateTime();
         }
@@ -80,6 +80,26 @@ class Trace {
             return $this->parameters[$key];
         }
         return $default;
+    }
+
+    /**
+     * Enregistre un message dans la base de données
+     * 
+     * @param string $type Type de message
+     * @param string $msg  Le message a enregistrer 
+     */
+    public function write($type, $msg) {
+        /** Le message est enregistré en base de données * */
+        /** On récupère la date et heure courante * */
+        /* @var $date DateTime */
+        $date = $this->getDateTime();
+
+        /** On utilise une requête préparée * */
+        $stmt = $this->pdo->prepare("INSERT INTO " . $this->getParameter('tbl') . " (date_msg,type,msg) VALUES (:date, :type, :msg)");
+        $stmt->bindParam(':date', $date);
+        $stmt->bindParam(':type', $type);
+        $stmt->bindParam(':msg', $msg);
+        $stmt->execute();
     }
 
 }

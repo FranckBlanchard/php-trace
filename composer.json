@@ -1,6 +1,8 @@
 {
-    "name": "franck/php-trace",
-    "description": "Trace",
+    "name": "franckblanchard/php-trace",
+    "description": "Trace, une classe php de log en base de données.",
+    "keywords": ["log","logging"],
+    "homepage": "https://github.com/FranckBlanchard/php-trace",
     "authors": [
         {
             "name": "Franck Blanchard",
