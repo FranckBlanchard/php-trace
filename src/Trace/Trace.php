@@ -3,7 +3,7 @@
 namespace Trace;
 
 /**
- * Trace est uns classe PHP qui permet d'enregistrer des informations, dans une base de données.
+ * Trace est une classe PHP qui permet d'enregistrer des informations, dans une base de données.
  * @author franck blanchard <info@aztequemedia.com>
  *
  */
@@ -24,10 +24,13 @@ class Trace {
     /**
      * Paramètres optionnel de configuration
      *
-     * @var array 
+     * @var array
      */
     protected $parameters;
 
+    /**
+    * Constucteur de la Class
+    */
     function __construct(\PDO $pdo, array $parameters = array('tbl' => 'trace')) {
         $this->pdo = $pdo;
         $this->parameters = $parameters;
@@ -59,7 +62,7 @@ class Trace {
 
     /**
      * Enregistre un paramètre.
-     * 
+     *
      * @param string|int $key
      * @param mixed $value
      */
@@ -69,9 +72,9 @@ class Trace {
 
     /**
      * Retourne un paramètre
-     * 
+     *
      * @param string|int $key
-     * 
+     *
      * @return mixed
      */
     public function getParameter($key) {
@@ -84,9 +87,9 @@ class Trace {
 
     /**
      * Enregistre un message dans la base de données
-     * 
+     *
      * @param string $type Type de message
-     * @param string $msg  Le message a enregistrer 
+     * @param string $msg  Le message a enregistrer
      */
     public function write($type, $msg) {
         /** Le message est enregistré en base de données * */
